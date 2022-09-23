@@ -4,6 +4,13 @@ import { createApp } from 'vue';
 import { document } from 'dominative';
 import App from './App.vue';
 
+const mapEvents = () => {
+  const TextFieldElement = document.defaultView.TextField;
+  TextFieldElement.mapEvent('input', 'textChange');
+  TextFieldElement.mapProp('value', 'text');
+};
+mapEvents();
+
 Application.run({
   create: () => {
     Object.defineProperty(global, '__DEV__', { value: false });

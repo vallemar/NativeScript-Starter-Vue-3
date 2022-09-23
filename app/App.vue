@@ -7,6 +7,9 @@
     >
       <Button @tap="count++" text="Tap Me!" />
       <Label :text="count"></Label>
+
+      <TextField v-model="textField" width="100%"></TextField>
+      <Label :text="textField"></Label>
     </FlexboxLayout>
   </Page>
 </template>
@@ -15,6 +18,7 @@
 import { ref } from 'vue';
 
 const count = ref(1);
+const textField = ref('');
 </script>
 
 <style>
